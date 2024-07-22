@@ -10,10 +10,10 @@ function Login() {
    const navigate =useNavigate();
     const handlesubmit = (e) => {
       e.preventDefault();
-      axios.post("http://localhost:3001/login", {email,password})
+      axios.post("http://localhost:9090/auth/login", {email,password})
       .then((res)=>{
         console.log(res);
-        if (res.data=="success")
+        if (res.data.message==="success")
         {
           navigate("/");
         }

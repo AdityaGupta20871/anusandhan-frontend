@@ -70,7 +70,7 @@ const VideoRecorder = () => {
       });
 
       const response = await axios.post(
-        "http://127.0.0.1:9090/media/upload",
+        "http://127.0.0.1:9090/wav2string/media/upload",
         formData,
         {
           headers: {
@@ -96,7 +96,7 @@ const VideoRecorder = () => {
       const formData = new FormData();
       formData.append("text", textstring);
       const response1 = await axios.post(
-        "http://127.0.0.1:5090/wordcloud/pos",
+        "http://127.0.0.1:9090/backend/wordcloud/pos",
         formData,
         {
           headers: {
@@ -109,7 +109,7 @@ const VideoRecorder = () => {
 
       // Make a POST request to the second API
       const response2 = await axios.post(
-        "http://127.0.0.1:5090/wordcloud/neg",
+        "http://127.0.0.1:9090/backend/wordcloud/neg",
         formData,
         {
           headers: {
@@ -122,7 +122,7 @@ const VideoRecorder = () => {
 
       //Make a Post request to the third API
       const resposne3 = await axios.post(
-        "http://127.0.0.1:5090/barplot/high",
+        "http://127.0.0.1:9090/backend/barplot/high",
         formData,
         {
           headers: {
@@ -135,7 +135,7 @@ const VideoRecorder = () => {
 
       //Make a Post request to the fourth API
       const resposne4 = await axios.post(
-        "http://127.0.0.1:5090/barplot/low",
+        "http://127.0.0.1:9090/backend/barplot/low",
         formData,
         {
           headers: {
@@ -147,7 +147,7 @@ const VideoRecorder = () => {
       console.log(responseData4);
       //Make a Post request to the fourth API
       const resposne5 = await axios.post(
-        "http://127.0.0.1:5090/text/summ",
+        "http://127.0.0.1:9090/backend/text/summ",
         formData,
         {
           headers: {

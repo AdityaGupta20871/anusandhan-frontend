@@ -22,7 +22,7 @@ function Report() {
       console.log(words);
       formData.append("text",words); // Append the entered word to FormData
       const response = await axios.post(
-        "http://127.0.0.1:5091/semantic",
+        "http://127.0.0.1:9090/semantics/semantic",
         formData,
         {
           headers: {

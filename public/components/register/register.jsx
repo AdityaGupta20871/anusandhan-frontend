@@ -4,7 +4,7 @@ import axios from "axios";
 import Logo from "../login/Marketing 7 Isometric Illustration - Agnytemp 1.png";
 import "./register.scss";
 
-function Login() {
+function Register() {
 
   const [email, setemailval] = useState("");
   const [uname, setuname] = useState("");
@@ -12,7 +12,7 @@ function Login() {
   const navigate =useNavigate();
   const handlesubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/register", {uname,email,password})
+    axios.post("http://localhost:9090/auth/register", {uname,email,password})
     .then((res)=>{
       console.log(res);
       alert("Registered Successfully continue with login now");
@@ -91,5 +91,5 @@ function Login() {
       </>
     );
   }
-export default Login;
+export default Register;
   
